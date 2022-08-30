@@ -1,4 +1,4 @@
-package controller;
+package com.crud.sql.controller;
 
 import java.util.List;
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.id.Assigned;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="project")
@@ -106,6 +107,8 @@ public class Project {
 	/**
 	 * @return the assignment
 	 */
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Assignment")
 	public List<Assignment> getAssignment() {
 		return assignment;
 	}
@@ -121,8 +124,7 @@ public class Project {
 
 	@Override
 	public String toString() {
-		return "Project [id=" + id + ", project_name=" + project_name + ", project_hours=" + project_hours
-				+ ", assignment=" + assignment + "]";
+		return "Project [id=" + id + ", project_name=" + project_name + ", project_hours=" + project_hours + "]";
 	}
 
 

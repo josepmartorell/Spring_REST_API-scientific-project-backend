@@ -16,7 +16,7 @@ import com.crud.sql.dto.Project;
 import com.crud.sql.service.ProjectServiceImpl;
 
 @RestController
-@RequestMapping(name="/api")
+@RequestMapping("/api")
 public class ProjectController {
 	
 	@Autowired

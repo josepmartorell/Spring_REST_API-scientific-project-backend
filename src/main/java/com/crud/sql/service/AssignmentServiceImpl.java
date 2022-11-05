@@ -3,10 +3,12 @@ package com.crud.sql.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.crud.sql.dao.IAssignmentDAO;
 import com.crud.sql.dto.Assignment;
 
+@Service
 public class AssignmentServiceImpl implements IAssignmentService{
 	
 	@Autowired
